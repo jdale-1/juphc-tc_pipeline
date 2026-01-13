@@ -76,21 +76,3 @@ spec:
         echo "***** Running jasminetests *****"
         npx jasmine
 ---
-- name: npminstall
-  workspaces:
-    - name: source
-      workspace: pipeline-workspace
-  taskRef:
-    name: npm
-  runAfter:
-    - clone
----
-- name: tests
-  workspaces:
-    - name: source
-      workspace: pipeline-workspace
-  taskRef:
-    name: jasmine
-  runAfter:
-    - npminstall
----
