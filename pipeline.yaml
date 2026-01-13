@@ -34,7 +34,6 @@ spec:
         value: $(params.branch)
       runAfter:
         - init
----
  name: npminstall
   workspaces:
     - name: source
@@ -43,7 +42,6 @@ spec:
     name: npm
   runAfter:
     - clone
----
 - name: tests
   workspaces:
     - name: source
@@ -52,7 +50,6 @@ spec:
     name: jasmine
   runAfter:
     - npminstall
----
 - name: build
   workspaces:
     - name: source
